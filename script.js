@@ -1,7 +1,7 @@
 document.getElementById('user-input').addEventListener('keypress', async function(event) {
     if (event.key === "Enter" && !event.shiftKey) {
-        event.preventDefault(); // جلوگیری از ارسال فرم
-        sendMessage();
+        event.preventDefault(); 
+        sendMessage();// ارسال پیام با زدن کلید اینتر
     }
 });
 
@@ -12,9 +12,9 @@ function sendMessage() {
     const trimmedInput = input.value.trim();
     if (trimmedInput) {
         addMessage(trimmedInput, 'user-message');
-        input.value = ''; // پاک کردن باکس متن پس از ارسال.
+        input.value = ''; // پاک کردن باکس متن بعد از ارسال
         simulateTypingIndicator();
-        setTimeout(() => { processBotResponse(trimmedInput); }, 1000); // افزودن تأخیر برای شبیه‌سازی زمان پردازش
+        setTimeout(() => { processBotResponse(trimmedInput); }, 1000); // اضافه کردن تأخیر برای شبیه‌سازی زمان پردازش
     }
 }
 
@@ -70,7 +70,7 @@ function processBotResponse(userInput) {
             case "ساعتو بگو":
             case "ساعت چنده":
             const currentTime = new Date().toLocaleTimeString('fa-IR', { hour: '2-digit', minute: '2-digit', hour12: false });
-                response = `الان ساعت  ${currentTime}  است`; // زمان به شکل 24 ساعته مثل "13:45" نمایش داده می‌شود.
+                response = `الان ساعت  ${currentTime}  است`; // زمان به شکل 24 ساعته.
                     break;
 
             case "سیلام":
@@ -135,6 +135,16 @@ function processBotResponse(userInput) {
             case "خب":
                 response = "خب که خب";
                     break;
+            
+            case "":
+            case "":
+                response ="";
+                    break;
+
+            case "":
+            case "":
+                response ="";
+                    break;
 
             case "چیکار میکنی":
             case "چکار میکنی":
@@ -162,18 +172,6 @@ function processBotResponse(userInput) {
                 response = "فعلا میتونم باهات چت کنم ولی درحال ارتقاع هستم";
                     break;
 
-            case "خر":
-            case "الاغ":
-            case "گاو":
-            case "گوساله":
-            case "بز":
-            case "شتر":
-            case "قاطر":
-            case "بزغاله":
-            case "گوسفند":
-            case "گراز":
-                response = "افرین عزیزم . دیگه اسم چه حیوونایی رو بلدی؟";
-                    break;
 
             case "کی تورو ساخته؟":
             case "تورو کی ساخته؟":
@@ -206,15 +204,16 @@ function processBotResponse(userInput) {
                 response = "اقا محمد ";
                     break;
 
+            case "آها":
             case "اها":
-            case "عا":
+            case "hih":
             case "عاها":
             case "اهوم":
             case "عوهوم":
             case "عام":
             case "امم":
             case "خوبه":
-                response ="عوم";
+                response ="بله";
                     break;
 
     //special code
@@ -240,7 +239,7 @@ function processBotResponse(userInput) {
 
 
 
-            case "تاریخ میلادی":
+            case "تاریخ":
                 const today = new Date();
                 const day = today.getDate().toString().padStart(2, '0');
                 const month = (today.getMonth() + 1).toString().padStart(2, '0');
