@@ -1,25 +1,16 @@
 document.getElementById('user-input').addEventListener('keypress', async function(event) {
     if (event.key === "Enter" && !event.shiftKey) {
-        event.preventDefault(); 
-        sendMessage();// ارسال پیام با زدن کلید اینتر
-    }
-});
-
-
-
+        event.preventDefault(); //ارسال با کلید اینتر
+        sendMessage();}});
 function sendMessage() {
     const input = document.getElementById('user-input');
     const trimmedInput = input.value.trim();
     if (trimmedInput) {
         addMessage(trimmedInput, 'user-message');
-        input.value = ''; // پاک کردن باکس متن بعد از ارسال
+        input.value = ''; // پاک کردن جعبه متن بعد از ارسال.
         simulateTypingIndicator();
-        setTimeout(() => { processBotResponse(trimmedInput); }, 1000); // اضافه کردن تأخیر برای شبیه‌سازی زمان پردازش
-    }
-}
-
-
-
+        setTimeout(() => { processBotResponse(trimmedInput); }, 1000);//تاخیر در پاسخ
+   }} 
 function simulateTypingIndicator() {
     const chatOutput = document.getElementById('chat-output');
     const typingIndicator = document.createElement('div');
@@ -27,38 +18,23 @@ function simulateTypingIndicator() {
     typingIndicator.textContent = "در حال تایپ...";
     chatOutput.appendChild(typingIndicator);
     chatOutput.scrollTop = chatOutput.scrollHeight;
-    setTimeout(() => chatOutput.removeChild(typingIndicator), 950); 
-}
-
-
-
-
+    setTimeout(() => chatOutput.removeChild(typingIndicator), 950); }
 function addMessage(message, className) {
     const chatOutput = document.getElementById('chat-output');
     const messageDiv = document.createElement('div');
-    const currentTime = new Date().toLocaleTimeString([], {hour: '2-digit', minute:'2-digit'});
+    const currentTime = new Date().toLocaleTimeString([], {hour: '2-digit', minute:'2-digit'});// افزودن زمان به پیام
     messageDiv.classList.add('message', className);
-    messageDiv.innerHTML = `${message} <span class="timestamp">${currentTime}</span>`; // افزودن زمان به پیام
-    chatOutput.appendChild(messageDiv);
-    chatOutput.scrollTop = chatOutput.scrollHeight;
-}
-
-
-
-
+    messageDiv.innerHTML = `${message} <span class="timestamp">${currentTime}</span>`;
+    chatOutput.appendChild(messageDiv);     
+    chatOutput.scrollTop = chatOutput.scrollHeight;}
 function addMessage(message, className) {
     const chatOutput = document.getElementById('chat-output');
     const messageDiv = document.createElement('div');
-    const currentTime = new Date().toLocaleTimeString([], {hour: '2-digit', minute:'2-digit'});
+    const currentTime = new Date().toLocaleTimeString([], {hour: '2-digit', minute:'2-digit'});// افزودن زمان به پیام
     messageDiv.classList.add('message', className);
-    messageDiv.innerHTML = `<span class="message-text">${message}</span> <span class="timestamp">${currentTime}</span>`; // افزودن زمان به پیام
+    messageDiv.innerHTML = `<span class="message-text">${message}</span> <span class="timestamp">${currentTime}</span>`; 
     chatOutput.appendChild(messageDiv);
-    chatOutput.scrollTop = chatOutput.scrollHeight;
-}
-
-
-
-
+    chatOutput.scrollTop = chatOutput.scrollHeight;}//اسکرول به اخرین پیام
 function processBotResponse(userInput) {
     let response;
     switch (userInput.toLowerCase()) {
@@ -70,9 +46,8 @@ function processBotResponse(userInput) {
             case "ساعتو بگو":
             case "ساعت چنده":
             const currentTime = new Date().toLocaleTimeString('fa-IR', { hour: '2-digit', minute: '2-digit', hour12: false });
-                response = `الان ساعت  ${currentTime}  است`; // زمان به شکل 24 ساعته.
+                response = `الان ساعت  ${currentTime}  است`; // زمان به شکل 24 ساعته مثل "13:45" نمایش داده می‌شود.
                     break;
-
             case "سیلام":
             case "سلم":
             case "سلام":
@@ -88,7 +63,6 @@ function processBotResponse(userInput) {
             case "shghl":
                 response ="سلام من ربات هستم";
                     break;
-
             case "چطوری":
             case "خبی":
             case "خوبی":
@@ -99,7 +73,6 @@ function processBotResponse(userInput) {
             case "حالت خوبه":
                 response ="ممنون خوبم";
                     break;
-
             case "اسمت چیه":
             case "اسم":
             case "اسمت":
@@ -109,7 +82,6 @@ function processBotResponse(userInput) {
             case "whats your name?":
                 response ="اسم من در حال حاضر ربات است";
                     break;
-
             case "چند سالته":
             case "چند روزه به دنیا اومدی":
             case "چند سالته؟":
@@ -117,7 +89,6 @@ function processBotResponse(userInput) {
             case "چندسالته؟":
                 response ="من تازه ساخته شده ام";
                     break;
-
             case "چخبر":
             case "چخبرا":
             case "چیخبر":
@@ -127,25 +98,20 @@ function processBotResponse(userInput) {
             case "چه خبر؟":
                 response = "خبری نیست";
                     break;
-
             case "تو با چه زبانی نوشته شدی":
-                response = "html,css,js";
+            case "با چه زبانی نوشته شدی؟":
+            case "با چه زبان هایی نوشته شدی؟":
+            case "با چه زبانی نوشته شدی":
+            case "با چه زبان هایی نوشته شدی":
+            case "با چه زبان هایی نوشته شده ای":
+            case "?با چه زبان هایی نوشته شده ای":
+            case "با چه زبان هایی ساخته شدی؟":
+            case "fh ]i cfhk ihdd shoji and?":
+                response = "طراحی شدم html و css , js با";
                     break;
-
             case "خب":
                 response = "خب که خب";
                     break;
-            
-            case "":
-            case "":
-                response ="";
-                    break;
-
-            case "":
-            case "":
-                response ="";
-                    break;
-
             case "چیکار میکنی":
             case "چکار میکنی":
             case "چکارا میکنی":
@@ -158,7 +124,6 @@ function processBotResponse(userInput) {
             case "چیکارا میکنی؟":
                 response = "فعلا که دارم با شما حرف میزنم"+" ولی کار های زیادی میتونم انجام بدم";
                     break;
-
             case "چیابلدی":
             case "چیا بلدی؟":
             case "چکار بلدی کنی؟":
@@ -171,8 +136,6 @@ function processBotResponse(userInput) {
             case "چه کارهایی بلدی":
                 response = "فعلا میتونم باهات چت کنم ولی درحال ارتقاع هستم";
                     break;
-
-
             case "کی تورو ساخته؟":
             case "تورو کی ساخته؟":
             case "سازنده تو کیه؟":
@@ -190,7 +153,6 @@ function processBotResponse(userInput) {
             case "کی تورو ساخته":
                 response = " منو بابام ساخته";
                     break;
-
             case "بابات کیه؟":
             case "بابات کیه":
             case "اسم بابات چیه؟":
@@ -203,10 +165,8 @@ function processBotResponse(userInput) {
             case "پدرت کیست؟":
                 response = "اقا محمد ";
                     break;
-
-            case "آها":
             case "اها":
-            case "hih":
+            case "عا":
             case "عاها":
             case "اهوم":
             case "عوهوم":
@@ -215,84 +175,41 @@ function processBotResponse(userInput) {
             case "خوبه":
                 response ="بله";
                     break;
-
     //special code
-            case "138686":
-                response = "سلام عالیجناب";
+            case "":
+                response = "";
                     break;
-            case "860086":
-                response = "سلام عشقم";
+            case "":
+                response = "";
                     break;
-            case "9911":
-                response ="دوستت دارم";
+            case "":
+                response ="";
                     break;
-            case "0160":
-                response ="عشق منی";
+            case "":
+                response ="";
                     break;
-            case "0557":
-                response ="نفس منی";
+            case "":
+                response ="";
                     break;  
-            case "8131":
-                response ="عاشقتم";
+            case "":
+                response ="";
                     break;
-
-
-
-
+            case "تاریخ میلادی":
             case "تاریخ":
+            case "امروز چندمه":
+            case "الان چندمه":
+            case "امروز چندمه؟":
                 const today = new Date();
                 const day = today.getDate().toString().padStart(2, '0');
                 const month = (today.getMonth() + 1).toString().padStart(2, '0');
                 const year = today.getFullYear();
                     response= `${day}/${month}/${year}`;
                         break;
-
-        default:
-            response = "احتمالا برای این حرف برنامه ریزی نشدم";
+                    default:
+                response = "احتمالا برای این حرف برنامه ریزی نشدم";
     }
     addMessage(response, 'bot-message');
 }
-
-
-
-function addBotMessage(message) {
-    const container = document.getElementById('chatContainer');
-    const messageElement = document.createElement('div');
-    
-    messageElement.classList.add('message', 'received');
-    messageElement.textContent = message;
-    
-    container.appendChild(messageElement);
-    container.scrollTop = container.scrollHeight; // اسکرول خودکار به پایین برای نمایش آخرین پیام
-  }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 //    __  __  ___  _   _    _    __  __ __  __    _    ____  
 //   |  \/  |/ _ \| | | |  / \  |  \/  |  \/  |  / \  |  _ \ 
