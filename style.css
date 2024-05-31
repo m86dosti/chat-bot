@@ -6,7 +6,7 @@ body, html {
     justify-content: center;
     align-items: center;
     background-color: #3a495f;
-    font-family: 'Segoe UI', sans-serif;
+    font-family:  sans-serif;
 }
 
 .chat-container {
@@ -16,18 +16,17 @@ body, html {
     display: flex;
     flex-direction: column;
     background-color: #fff;
-    border-radius: 15px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, .2);
+    border-radius: 50px;
 }
 
 .chat-header {
     display: flex;
-    align-items: center;
+    align-items:center;
     padding: 10px 20px;
-    background-color: #007bff;
+    background-color: #244778;
     color: white;
-    border-top-left-radius: 15px;
-    border-top-right-radius: 15px;
+    border-top-left-radius: 12px;
+    border-top-right-radius: 12px;
 }
 
 .avatar {
@@ -35,10 +34,6 @@ body, html {
     height: 40px;
     border-radius: 50%;
     margin-right: 10px;
-}
-
-.chat-info .name, .chat-info .status {
-    margin: 0;
 }
 
 .status-dot {
@@ -50,29 +45,25 @@ body, html {
 }
 .status{
     font-size: 11px;
+    color: #00ff08;
 }
 
 .online {
-    background-color: #4CAF50;
-}
-
-.offline {
-    background-color: #f44336;
+    background-color: #00ff08;
 }
 
 #chat-output {
     flex: 1;
     padding: 10px 20px;
     overflow-y: auto;
-    background: #f7f7f7;
+    background: #ebe8e8;
 }
 
 .message {
-    max-width: 80%;
+    max-width: 70%;
     padding: 10px;
     border-radius: 20px;
     margin-bottom: 20px;
-    background-color: #dcf8c6;
     align-self: flex-end;
     margin-right: 10px;
 }
@@ -80,7 +71,7 @@ body, html {
 .input-area {
     display: flex;
     padding: 10px 20px;
-    background-color: #f0f2f5;
+    background-color: #0c2954;
     border-bottom-left-radius: 15px;
     border-bottom-right-radius: 15px;
 }
@@ -89,12 +80,11 @@ body, html {
     width: 100%;
     border: 2px solid #eff2f5;
     padding: 10px;
-    border-radius: 30px;
+    border-radius: 10px;
     outline: none;
     margin-right: 10px;
-    background-color: #eff2f5;
+    background-color: #d9dce0;
 }
-
 .input-area button {
     border: none;
     background-color: #007bff;
@@ -105,15 +95,10 @@ body, html {
 }
 
 .input-area button:hover {
-    opacity: 0.8;
+background-color: #234674;
 }
 
-.timestamp {
-    display: block;
-    color: #666;
-    font-size: 12px;
-    margin-top: 4px;
-}
+
 .typing-indicator {
     color: #aaa;
     font-style: italic;
@@ -121,22 +106,21 @@ body, html {
 
 .message {
     padding: 10px;
-    border-radius: 20px;
-    margin: 5px 0;
+    border-radius: 10px;
+    margin: 5px ;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    animation: fadeInUp 0.5s ease-out;
-    -webkit-animation: fadeInUp 0.5s ease-out;
+    animation: fadeInUp 0.5s ;
 }
 
 .user-message {
-    background-color: #dcf8c6; 
+    background-color: #b1df8e; 
     margin-left: auto; 
 }
 
 .bot-message {
-    background-color: #f0f0f0; 
+    background-color: #dddddd; 
     margin-right: auto;
 }
 
@@ -146,30 +130,18 @@ body, html {
 }
 
 .timestamp {
-    font-size: 8px;
-    color: #666;
+    font-size: 5px;
+    color: #000000;
     margin-left: 10px;
+    margin-top: 20px;
 }
 
 @keyframes fadeInUp {
     from {
       transform: translateY(20px);
-      opacity: 0;
-    }
+}
     to {
-      transform: translateY(0);
-      opacity: 1;
-    }
+      transform: translateY(0px);
+}
   }
   
-  .received {
-    background-color: #e2e2e2;
-  }
-  
-  #chatContainer {
-    margin: 20px;
-    border: 1px solid #ccc;
-    padding: 10px;
-    max-height: 300px;
-    overflow-y: auto;
-  }
