@@ -188,7 +188,7 @@ function processBotResponse(userInput) {
             case "بدرود":            
             case "خدانگهدارت":            
             case "فعلا بای بای":            
-                response ="!خدانگهدار ; من همیشه در دسترس هستم";
+                response ="!خدانگهدار";
                     break;
             case "ممنون":
             case "تشکر":
