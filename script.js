@@ -175,6 +175,42 @@ function processBotResponse(userInput) {
             case "خوبه":
                 response ="بله";
                     break;
+            case "خدافز":
+            case "بای":
+            case "خدانگهدار":
+            case "خدا نگهدار":
+            case "بای بای":
+            case "فعلا":
+            case "فعلا خدانگهدار":
+            case "فعلا بای":
+            case "فعلا خدافز":
+            case "فعلا خودافز":
+            case "بدرود":            
+            case "خدانگهدارت":            
+            case "فعلا بای بای":            
+                response ="!خدانگهدار ; من همیشه در دسترس هستم";
+                    break;
+            case "":
+            case "":
+            case "":
+            case "":
+            case "":
+                response ="";
+                    break;
+            case "":
+            case "":
+            case "":
+            case "":
+            case "":
+                response ="";
+                    break;
+            case "":
+            case "":
+            case "":
+            case "":
+            case "":
+                response ="";
+                    break;
     //special code
             case "":
                 response = "";
