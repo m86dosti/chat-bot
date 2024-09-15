@@ -190,12 +190,17 @@ function processBotResponse(userInput) {
             case "فعلا بای بای":            
                 response ="!خدانگهدار ; من همیشه در دسترس هستم";
                     break;
-            case "":
-            case "":
-            case "":
-            case "":
-            case "":
-                response ="";
+            case "ممنون":
+            case "تشکر":
+            case "خیلی ممنون":
+            case "سپاس":
+            case "سپاسگذارم":
+            case "سپاسگزارم":
+            case "سپاس گزارم":
+            case "سپاس فراوان":
+            case "باشه ممنون":
+            case "لطف کردی":
+                response ="خواهش میکنم";
                     break;
             case "":
             case "":
