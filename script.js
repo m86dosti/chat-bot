@@ -10,7 +10,7 @@ function sendMessage() {
         input.value = ''; // پاک کردن جعبه متن بعد از ارسال.
         simulateTypingIndicator();
         setTimeout(() => { processBotResponse(trimmedInput); }, 1000);//تاخیر در پاسخ
-   }} 
+}} 
 function simulateTypingIndicator() {
     const chatOutput = document.getElementById('chat-output');
     const typingIndicator = document.createElement('div');
