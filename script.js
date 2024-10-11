@@ -251,7 +251,6 @@ function processBotResponse(userInput) {
     }
     addMessage(response, 'bot-message');
 }
-
 //    __  __  ___  _   _    _    __  __ __  __    _    ____  
 //   |  \/  |/ _ \| | | |  / \  |  \/  |  \/  |  / \  |  _ \ 
 //   | |\/| | | | | |_| | / _ \ | |\/| | |\/| | / _ \ | | | |
